@@ -10,16 +10,18 @@
 <br />
 
 <h3>Technology Stack:</h3>
-<p>
-  HTML, SCSS, Vue.js, Vite.js <br />
-  Vercel Cloud Deployment
-</p>
+<p>Vue.js, Vite.js, SCSS <br /></p>
+
+<br />
+
+<h3>Deployment:</h3>
+<p>Vercel</p>
 
 <br />
 
 <p>
   Personal website for a <a href="https://dzieciom.pl">Fundacja Dzieciom „Zdążyć z Pomocą”</a> foundation beneficiary, <br />
-  ontaing information about the child, health conditions and foundation data
+  containg information about the child, health conditions and foundation data.
 </p>
 
-<img src="https://github.com/user-attachments/assets/8780852b-47b7-49f5-bdb6-effb57ccb9f0" width="800px" height="auto"/>
+<img src="https://github.com/user-attachments/assets/413cf291-6906-45af-b920-bb2bd7d6d3dc" width="800px" height="auto" />
