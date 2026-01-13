@@ -1,6 +1,11 @@
 <template>
-
-  <svg id="firstWave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120">
+  <svg
+    id="firstWave"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 1440 120"
+    aria-hidden="true"
+    focusable="false"
+  >
     <path transform="translate(0)">
       <animate
         attributeName="d"
@@ -15,7 +20,13 @@
     </path>
   </svg>
 
-  <svg id="secondWave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 190">
+  <svg
+    id="secondWave"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 1440 190"
+    aria-hidden="true"
+    focusable="false"
+  >
     <path transform="translate(0)">
       <animate
         attributeName="d"
@@ -29,7 +40,13 @@
     </path>
   </svg>
 
-  <svg id="thirdWave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 250">
+  <svg
+    id="thirdWave"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 1440 250"
+    aria-hidden="true"
+    focusable="false"
+  >
     <path transform="translate(0)">
       <animate
         attributeName="d"
@@ -43,5 +60,4 @@
       />
     </path>
   </svg>
-
 </template>

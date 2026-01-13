@@ -5,24 +5,48 @@ $gratitude: var(--accent-yellow);
 $foundation: var(--accent-blue);
 $help: var(--accent-orange);
 
-#navbarView {
-  width: 100%;
-  padding: 1rem 2rem;
-  justify-content: space-between;
-  align-items: center;
+header#navbarView {
   position: fixed;
+  width: 100%;
   top: 0;
   left: 0;
-  background: white;
   z-index: 100;
 }
 
-#navbarView button {
+.info {
+  background: var(--dark);
+  padding: 0.5rem 1rem;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.info p {
+  padding: 0;
+  font-size: 0.8rem;
+  color: var(--accent-orange);
+}
+
+.info div:first-child {
+  text-align: left;
+}
+.info div:last-child {
+  text-align: right;
+}
+
+nav {
+  padding: 1rem 2rem;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+}
+
+nav button {
   border: none;
   background: none;
 }
 
-#navbarView button.siteLogo {
+nav button.siteLogo {
   padding: 1rem 0.5rem;
   text-transform: uppercase;
   font-size: 1.7rem;
@@ -40,7 +64,7 @@ $help: var(--accent-orange);
   }
 }
 
-#navbarView button.menuItem {
+nav button.menuItem {
   padding: 1rem;
   font-size: 0.8rem;
   position: relative;
@@ -68,7 +92,7 @@ $help: var(--accent-orange);
   }
 }
 
-#navbarView button.menuItem {
+nav button.menuItem {
   &.about {
     &:hover {
       color: $about;
@@ -137,23 +161,29 @@ $help: var(--accent-orange);
   }
 }
 
-#navbarView .navigation ul {
+.navigation ul {
   gap: 2rem;
   align-items: center;
 }
 
-#navbarView a.foundationLogo {
-  height: 5rem;
-  width: auto;
-  margin-left: 3rem;
+a.foundationLogo {
+  height: 3.5rem;
+  width: 3.5rem;
+  margin-left: 1.5rem;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   img {
     height: 100%;
-    width: auto;
-    border-radius: 50%;
+    width: 100%;
+    object-fit: contain;
+    border-radius: 0;
+    display: block;
   }
 }
 
-#navbarView .toggleMobile {
+nav .toggleMobile {
   margin-left: 2rem;
   position: relative;
   height: 4rem;
@@ -175,7 +205,7 @@ $help: var(--accent-orange);
   }
 }
 
-#navbarView.active .toggleMobile #hamburger {
+nav.active .toggleMobile #hamburger {
   background: white;
   border-radius: 50%;
   animation: fadeIn 1s ease;
@@ -268,7 +298,7 @@ $help: var(--accent-orange);
 // ---------------------------- media smaller screens ----------------------------
 
 @media screen and (min-width: 1023px) and (max-width: 1400px) {
-  #navbarView button {
+  nav button {
     &.siteLogo {
       font-size: 1.3rem;
       span {
@@ -280,25 +310,25 @@ $help: var(--accent-orange);
     }
   }
 
-  #navbarView .navigation ul {
+  .navigation ul {
     gap: 1rem;
   }
-  #navbarView a.foundationLogo {
-    height: 4rem;
+  a.foundationLogo {
+    height: 2.5rem;
   }
 }
 
 // ---------------------------- media phones ----------------------------
 
 @media screen and (max-width: 1023px) {
-  #navbarView button.siteLogo {
+  nav button.siteLogo {
     font-size: 1.3rem;
     span {
       font-size: 0.4rem;
     }
   }
 
-  #navbarView {
+  nav {
     button.menuItem {
       font-weight: 400;
       font-size: 1.6rem;
@@ -312,7 +342,7 @@ $help: var(--accent-orange);
     }
   }
 
-  #navbarView {
+  nav {
     .navigation {
       place-content: center;
       position: absolute;
@@ -344,7 +374,7 @@ $help: var(--accent-orange);
     }
   }
 
-  #navbarView.active .toggleMobile::before {
+  nav.active .toggleMobile::before {
     background: var(--light);
     background: rgb(235, 235, 235);
     width: 500vh;
@@ -359,20 +389,26 @@ $help: var(--accent-orange);
     animation: scaleIn 1s ease;
   }
 
-  #navbarView a.foundationLogo {
-    height: 4rem;
+  nav .foundationLogo {
+    height: 2rem;
+    width: 2rem;
     margin-left: auto;
+  }
+
+  nav .foundationLogo img {
+    height: 100%;
+    width: 100%;
   }
 }
 
 // ---------------------------- media phones ----------------------------
 
 @media screen and (max-width: 768px) {
-  #navbarView {
+  nav {
     padding: 1rem 0.5rem;
   }
 
-  #navbarView button {
+  nav button {
     &.siteLogo {
       font-size: 1rem;
       span {
@@ -384,11 +420,11 @@ $help: var(--accent-orange);
     }
   }
 
-  #navbarView a.foundationLogo {
-    height: 3rem;
+  nav a.foundationLogo {
+    height: 2rem;
   }
 
-  #navbarView .toggleMobile {
+  nav .toggleMobile {
     margin-left: 0.5rem;
   }
 }
@@ -396,26 +432,26 @@ $help: var(--accent-orange);
 // ---------------------------- media phones landscape ----------------------------
 
 @media screen and (max-height: 767px) and (max-width: 1023px) {
-  #navbarView {
+  nav {
     padding: 0rem 0.5rem;
   }
 
-  #navbarView button.menuItem {
+  nav button.menuItem {
     font-size: 0.8rem;
   }
 
-  #navbarView .toggleMobile {
+  nav .toggleMobile {
     height: 3rem;
     width: 3rem;
     margin-left: 1rem;
   }
 
-  #navbarView.active .toggleMobile::before {
+  nav.active .toggleMobile::before {
     width: 500vw;
     height: 500vw;
   }
 
-  #navbarView a.foundationLogo {
+  nav a.foundationLogo {
     height: 2.5rem;
   }
 }

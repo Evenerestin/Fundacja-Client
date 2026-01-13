@@ -13,7 +13,13 @@
     />
   </svg> -->
 
-  <svg id="leftCorner" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <svg
+    id="leftCorner"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 200 200"
+    aria-hidden="true"
+    focusable="false"
+  >
     <path transform="translate(100 100)">
       <animate
         attributeName="d"
@@ -29,7 +35,13 @@
     </path>
   </svg>
 
-  <svg id="rightCorner" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <svg
+    id="rightCorner"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 200 200"
+    aria-hidden="true"
+    focusable="false"
+  >
     <path transform="translate(100 100)">
       <animate
         attributeName="d"

@@ -1,5 +1,11 @@
 <template>
-  <svg id="firstBlob" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <svg
+    id="firstBlob"
+    viewBox="0 0 200 200"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
+    focusable="false"
+  >
     <path transform="translate(100 100)">
       <animate
         attributeName="d"
@@ -14,7 +20,13 @@
     </path>
   </svg>
 
-  <svg id="secondBlob" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <svg
+    id="secondBlob"
+    viewBox="0 0 200 200"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
+    focusable="false"
+  >
     <path transform="translate(100 100)">
       <animate
         attributeName="d"
@@ -29,7 +41,13 @@
     </path>
   </svg>
 
-  <svg id="thirdBlob" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <svg
+    id="thirdBlob"
+    viewBox="0 0 200 200"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
+    focusable="false"
+  >
     <path transform="translate(100 100)">
       <animate
         attributeName="d"
@@ -44,7 +62,13 @@
     </path>
   </svg>
 
-  <svg id="fourthBlob" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <svg
+    id="fourthBlob"
+    viewBox="0 0 200 200"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
+    focusable="false"
+  >
     <path transform="translate(100 100)">
       <animate
         attributeName="d"
@@ -59,7 +83,13 @@
     </path>
   </svg>
 
-  <svg id="fifthBlob" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <svg
+    id="fifthBlob"
+    viewBox="0 0 200 200"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
+    focusable="false"
+  >
     <path transform="translate(100 100)">
       <animate
         attributeName="d"
@@ -72,5 +102,4 @@
       />
     </path>
   </svg>
-
 </template>

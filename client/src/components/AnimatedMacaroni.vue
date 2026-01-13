@@ -1,5 +1,11 @@
 <template>
-  <svg id="firstMacaroni" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 179.67 193.01">
+  <svg
+    id="firstMacaroni"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 179.67 193.01"
+    aria-hidden="true"
+    focusable="false"
+  >
     <path transform="translate(-8.34 -3.75)">
       <animate
         attributeName="d"
@@ -14,7 +20,13 @@
     </path>
   </svg>
 
-  <svg id="secondMacaroni" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 179.67 193.01">
+  <svg
+    id="secondMacaroni"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 179.67 193.01"
+    aria-hidden="true"
+    focusable="false"
+  >
     <path transform="translate(-8.34 -3.75)">
       <animate
         attributeName="d"
@@ -29,7 +41,13 @@
     </path>
   </svg>
 
-  <svg id="thirdMacaroni" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 179.67 193.01">
+  <svg
+    id="thirdMacaroni"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 179.67 193.01"
+    aria-hidden="true"
+    focusable="false"
+  >
     <path transform="translate(-8.34 -3.75)">
       <animate
         attributeName="d"
@@ -44,7 +62,13 @@
     </path>
   </svg>
 
-  <svg id="fourthMacaroni" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 179.67 193.01">
+  <svg
+    id="fourthMacaroni"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 179.67 193.01"
+    aria-hidden="true"
+    focusable="false"
+  >
     <path transform="translate(-8.34 -3.75)">
       <animate
         attributeName="d"

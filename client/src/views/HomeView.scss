@@ -68,7 +68,7 @@
   background: rgba(255, 255, 255, 0.2);
   box-shadow: 0 0 50px rgba(255, 255, 255, 0.3);
   transition: all 0.5s ease;
-  &:hover {
+  &:hover, &:focus {
     color: white;
     background: linear-gradient(340deg, rgb(0, 82, 158, 0.1), rgb(94, 110, 187, 0.2));
     background: linear-gradient(340deg, var(--accent-primary), rgb(94, 110, 187, 0.2));
