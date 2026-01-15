@@ -35,7 +35,6 @@ export default {
       }
     }
 
-    // Keyboard navigation for modal
     const handleKeydown = (e) => {
       if (!showModal.value) return
       if (e.key === 'Escape') {
@@ -54,7 +53,6 @@ export default {
       window.removeEventListener('keydown', handleKeydown)
     })
 
-    // Keyboard open for gallery images
     const handleImageKeydown = (e, idx) => {
       if (e.key === 'Enter' || e.key === ' ') {
         openModal(idx)
@@ -102,7 +100,6 @@ export default {
       >
         &gt;
       </button>
-      <span tabindex="0" style="position: absolute; left: -9999px" @focus="closeModal"></span>
     </div>
     <div class="galleryContent flex">
       <div v-for="(image, index) in images" :key="index + 1" class="row">

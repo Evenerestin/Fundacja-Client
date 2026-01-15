@@ -1,4 +1,26 @@
+[data-theme='contrast'] {
+  --background: rgb(0, 0, 0) !important;
+  --foreground: rgb(255, 255, 255) !important;
+  --accent-secondary: rgb(255, 255, 0) !important;
+  --accent-primary: rgb(0, 255, 255) !important;
+  --accent-orange: rgb(255, 255, 0) !important;
+  --font-orange: rgb(255, 255, 0) !important;
+  --accent-yellow: rgb(255, 255, 0) !important;
+  --font-yellow: rgb(255, 255, 0) !important;
+  --accent-blue: rgb(0, 255, 255) !important;
+  --font-blue: rgb(0, 255, 255) !important;
+  --accent-green: rgb(0, 255, 0) !important;
+  --font-green: rgb(0, 255, 0) !important;
+  --lighter: rgb(24, 24, 24) !important;
+  --darker: rgb(0, 0, 0) !important;
+  --light: rgb(0, 0, 0) !important;
+  --dark: rgb(255, 255, 255) !important;
+  --overlay: rgba(255, 255, 0, 0.35) !important;
+}
+
 :root {
+  --background: var(--light);
+  --foreground: var(--dark);
   --accent-secondary: rgb(255, 150, 4);
   --accent-primary: rgb(0, 82, 158);
   --accent-orange: rgb(255, 150, 4);
@@ -9,8 +31,31 @@
   --font-blue: rgb(82, 132, 175);
   --accent-green: rgb(77, 209, 132);
   --font-green: rgb(58, 184, 110);
+  --lighter: rgb(255, 255, 255);
+  --darker: rgb(34, 34, 34);
   --light: rgb(241, 241, 241);
   --dark: rgb(29, 29, 29);
+  --overlay: rgba(255, 167, 153, 0.35);
+}
+
+[data-theme='dark'] {
+  --background: rgb(35, 39, 47);
+  --foreground: rgb(241, 241, 241);
+  --accent-secondary: rgb(255, 179, 71);
+  --accent-primary: rgb(30, 144, 255);
+  --accent-orange: rgb(255, 179, 71);
+  --font-orange: rgb(255, 152, 0);
+  --accent-yellow: rgb(255, 224, 102);
+  --font-yellow: rgb(255, 224, 102);
+  --accent-blue: rgb(92, 127, 163);
+  --font-blue: rgb(92, 127, 163);
+  --accent-green: rgb(78, 217, 155);
+  --font-green: rgb(78, 217, 155);
+  --lighter: rgb(45, 50, 58);
+  --darker: rgb(17, 20, 26);
+  --light: rgb(35, 39, 47);
+  --dark: rgb(241, 241, 241);
+  --overlay: rgba(8, 23, 66, 0.35);
 }
 
 *,
@@ -24,21 +69,25 @@
 }
 
 body {
-  background: var(--light);
+  background: var(--background);
+  color: var(--foreground);
+  transition:
+    background 0.3s,
+    color 0.3s;
 }
 
 h1 {
   font-size: 3rem;
   font-family: 'Varela Round', sans-serif;
   text-shadow:
-    -2px 0 #fff,
-    2px 0 #fff,
-    0 -2px #fff,
-    0 2px #fff,
-    2px 2px #fff,
-    -2px -2px #fff,
-    2px -2px #fff,
-    -2px 2px #fff;
+    -2px 0 var(--lighter),
+    2px 0 var(--lighter),
+    0 -2px var(--lighter),
+    0 2px var(--lighter),
+    2px 2px var(--lighter),
+    -2px -2px var(--lighter),
+    2px -2px var(--lighter),
+    -2px 2px var(--lighter);
 }
 h2 {
   font-size: 2rem;
@@ -91,7 +140,7 @@ img {
   min-height: 80vh;
   display: flex;
   margin-top: 8rem;
-  padding: 2rem clamp(1rem, 4vw, 5rem) 2rem;
+  padding: 4rem clamp(1rem, 4vw, 5rem) 2rem;
   justify-content: center;
   align-items: center;
 }

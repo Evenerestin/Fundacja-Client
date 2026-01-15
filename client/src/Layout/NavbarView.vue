@@ -1,6 +1,11 @@
 <script setup>
-import { onBeforeUnmount, onMounted, ref, watch } from 'vue'
+import FoundationLogo from '@/components/FoundationLogo.vue'
+import { IconContrastFilled, IconMoon, IconSun } from '@tabler/icons-vue'
+import { inject, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
+
+const theme = inject('theme', ref('light'))
+const setTheme = inject('setTheme', () => {})
 
 const accentColor = ref('')
 const route = useRoute()
@@ -68,19 +73,43 @@ onBeforeUnmount(() => {
 
 <template>
   <header id="navbarView" role="banner" class="flexColumn">
-    <div
-      class="info flex"
-      role="region"
-      aria-label="Organization registration information"
-      v-if="!isMobile"
-    >
-      <div>
-        <p>KRS: 0000037904</p>
-        <p>11787 Bieryt Aneta</p>
+    <div class="banner flex">
+      <div
+        class="info flex"
+        role="region"
+        aria-label="Organization registration information"
+      >
+        <div>
+          <p>KRS: 0000037904</p>
+          <p>11787 Bieryt Aneta</p>
+        </div>
+        <div v-if="!isMobile">
+          <p>Alior Bank 42 2490 0005 0000 4600 7549 3994</p>
+          <p>Fundacja Dzieciom „Zdążyć z Pomocą”</p>
+        </div>
       </div>
-      <div>
-        <p>Alior Bank 42 2490 0005 0000 4600 7549 3994</p>
-        <p>Fundacja Dzieciom „Zdążyć z Pomocą”</p>
+      <div class="themeSwitch flex" style="gap: 0.5rem; padding: 0.5rem 1rem">
+        <button
+          :class="{ active: theme === 'light' }"
+          aria-label="Jasny motyw"
+          @click="setTheme('light')"
+        >
+          <IconSun />
+        </button>
+        <button
+          :class="{ active: theme === 'dark' }"
+          aria-label="Ciemny motyw"
+          @click="setTheme('dark')"
+        >
+          <IconMoon />
+        </button>
+        <button
+          :class="{ active: theme === 'contrast' }"
+          aria-label="Wysoki kontrast"
+          @click="setTheme('contrast')"
+        >
+          <IconContrastFilled />
+        </button>
       </div>
     </div>
     <nav class="flex" :class="{ active: openMenu, inactive: !openMenu }">
@@ -105,72 +134,27 @@ onBeforeUnmount(() => {
           </li>
         </ul>
       </div>
-      <a href="https://dzieciom.pl" target="_blank" class="foundationLogo">
-        <button class="foundationLogo" aria-label="Fundacja Dzieciom">
-          <img src="/zdazyczpomocalogo.png" alt="Fundacja Dzieciom Logo" />
-        </button>
-      </a>
-      <div
-        v-if="isMobile"
-        @click="toggleMenu"
-        :class="{ active: openMenu, inactive: !openMenu }"
-        class="toggleMobile gridCenter"
-      >
-        <svg id="hamburger" viewbox="0 0 60 40">
-          <g stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
-            <path id="top-line" d="M10,15 L40,15 Z"></path>
-            <path id="middle-line" d="M10,25 L40,25 Z"></path>
-            <path id="bottom-line" d="M10,35 L40,35 Z"></path>
-          </g>
-        </svg>
+      <div class="flex">
+        <a href="https://dzieciom.pl" target="_blank" rel="noopener noreferrer" :class="`foundation ${isMobile ? 'mobile' : ''}`">
+          <FoundationLogo />
+        </a>
+        <div
+          v-if="isMobile"
+          @click="toggleMenu"
+          :class="{ active: openMenu, inactive: !openMenu }"
+          class="toggleMobile gridCenter"
+        >
+          <svg id="hamburger" viewbox="0 0 60 40">
+            <g stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+              <path id="top-line" d="M10,15 L40,15 Z"></path>
+              <path id="middle-line" d="M10,25 L40,25 Z"></path>
+              <path id="bottom-line" d="M10,35 L40,35 Z"></path>
+            </g>
+          </svg>
+        </div>
       </div>
     </nav>
   </header>
 </template>
-
-<!-- <template>
-  <nav id="navbarView" class="flex" :class="{ active: openMenu, inactive: !openMenu }">
-    <router-link to="/">
-      <button class="siteLogo flexColumn">Anetka Bieryt<span>Ty też możesz pomóc!</span></button>
-    </router-link>
-    <div class="navigation flex" aria-label="Główna nawigacja">
-      <ul class="flex">
-        <li v-for="(menu, index) in menuData" :key="index">
-          <router-link :to="menu.url">
-            <button
-              class="menuItem"
-              :class="{
-                active: $route.path === menu.url,
-                [getAccentColorClass()]: accentColor.value !== ''
-              }"
-              :aria-current="$route.path === menu.url ? 'page' : null"
-            >
-              {{ menu.title }}
-            </button>
-          </router-link>
-        </li>
-      </ul>
-    </div>
-    <a href="https://dzieciom.pl" target="_blank" class="foundationLogo">
-      <button class="foundationLogo" aria-label="Fundacja Dzieciom">
-        <img src="/zdazyczpomocalogo.png" alt="Fundacja Dzieciom Logo" />
-      </button>
-    </a>
-    <div
-      v-if="isMobile"
-      @click="toggleMenu"
-      :class="{ active: openMenu, inactive: !openMenu }"
-      class="toggleMobile gridCenter"
-    >
-      <svg id="hamburger" viewbox="0 0 60 40">
-        <g stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
-          <path id="top-line" d="M10,15 L40,15 Z"></path>
-          <path id="middle-line" d="M10,25 L40,25 Z"></path>
-          <path id="bottom-line" d="M10,35 L40,35 Z"></path>
-        </g>
-      </svg>
-    </div>
-  </nav>
-</template> -->
 
 <style src="./NavbarView.scss"></style>

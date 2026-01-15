@@ -4,7 +4,7 @@ $font: var(--font-orange);
 #helpView .waves svg {
   position: fixed;
   width: 150%;
-  top: 1rem;
+  top: 5rem;
   left: -10%;
   opacity: 0.2;
   z-index: -1;
@@ -84,7 +84,7 @@ $font: var(--font-orange);
 
 @media screen and (max-width: 767px) {
   #helpView .waves svg {
-    top: 3rem;
+    top: 8rem;
   }
 
   #helpView img {
@@ -96,7 +96,7 @@ $font: var(--font-orange);
 
   #helpView .content {
     padding: 0 clamp(1rem, 2vw, 8rem);
-    margin: 7rem 0 0;
+    margin: 8rem 0 0;
     width: 90vw;
     .header {
       align-items: center;
@@ -134,5 +134,11 @@ $font: var(--font-orange);
     h3 {
       font-size: 0.8rem;
     }
+  }
+}
+
+@media screen and (max-height: 767px) {
+  #helpView .waves svg {
+    top: 5rem;
   }
 }

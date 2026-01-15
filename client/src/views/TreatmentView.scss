@@ -40,7 +40,7 @@ $font: var(--font-green);
 
 #treatmentView img {
   position: fixed;
-  top: 6rem;
+  top: 8rem;
   right: -0.5rem;
   width: 40vw;
   mask-image: url('/maskTreatment.svg');
@@ -113,7 +113,7 @@ $font: var(--font-green);
     position: absolute;
     width: 90vw;
     height: auto;
-    top: 3rem;
+    top: 6rem;
     object-fit: contain;
   }
 

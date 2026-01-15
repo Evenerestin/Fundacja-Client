@@ -24,13 +24,16 @@
   letter-spacing: 1px;
   text-transform: uppercase;
   color: var(--accent-primary);
-  background: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 0 50px rgba(255, 255, 255, 0.3);
+  background: color-mix(in srgb, var(--background) 80%, var(--foreground) 20%);
+  box-shadow: 0 0 50px color-mix(in srgb, var(--background) 10%, var(--foreground) 30%);
   transition: all 0.5s ease;
   &:hover {
-    color: white;
-    background: linear-gradient(340deg, rgb(0, 82, 158, 0.1), rgb(94, 110, 187, 0.2));
-    background: linear-gradient(340deg, var(--accent-primary), rgb(94, 110, 187, 0.2));
+    color: var(--foreground);
+    background: linear-gradient(
+      340deg,
+      var(--accent-primary),
+      color-mix(in srgb, var(--background) 80%, var(--accent-primary) 20%)
+    );
     transform: scale(1.05);
   }
 }
