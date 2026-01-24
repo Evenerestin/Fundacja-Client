@@ -58,7 +58,6 @@
   text-transform: uppercase;
   color: var(--lighter);
   background-color: transparent;
-  // background: color-mix(in srgb, var(--background) 80%, var(--foreground) 20%);
   box-shadow: 0 0 50px color-mix(in srgb, var(--background) 10%, var(--foreground) 30%);
   transition: all 0.5s ease;
   &:hover,

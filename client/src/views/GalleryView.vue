@@ -9,6 +9,15 @@ export default {
     const showModal = ref(false)
     const selectedImage = ref(null)
 
+    const getImageSources = (imageSrc) => {
+      const basePath = imageSrc.replace(/\.(jpg|jpeg|png)$/i, '')
+      return {
+        avif: `${basePath}.avif`,
+        webp: `${basePath}.webp`,
+        jpg: imageSrc
+      }
+    }
+
     const openModal = (index) => {
       selectedImage.value = index
       showModal.value = true
@@ -67,7 +76,8 @@ export default {
       closeModal,
       selectNext,
       selectPrev,
-      handleImageKeydown
+      handleImageKeydown,
+      getImageSources
     }
   },
   components: {
@@ -81,7 +91,14 @@ export default {
     <AnimatedMacaroni />
     <div v-if="showModal" class="modalPopUp" tabindex="-1" aria-modal="true" role="dialog">
       <div class="modalImage">
-        <img :src="images[selectedImage].src" alt="Wybrane zdjęcie z galerii Anetki" />
+        <picture>
+          <source :srcset="getImageSources(images[selectedImage].src).avif" type="image/avif" />
+          <source :srcset="getImageSources(images[selectedImage].src).webp" type="image/webp" />
+          <img
+            :src="getImageSources(images[selectedImage].src).jpg"
+            alt="Wybrane zdjęcie z galerii Anetki"
+          />
+        </picture>
         <button @click="closeModal" class="close" aria-label="Zamknij podgląd zdjęcia">X</button>
       </div>
       <button
@@ -103,17 +120,21 @@ export default {
     </div>
     <div class="galleryContent flex">
       <div v-for="(image, index) in images" :key="index + 1" class="row">
-        <img
-          :src="image.src"
-          :loading="lazy"
+        <picture
           @click="openModal(index)"
           @keydown="handleImageKeydown($event, index)"
           tabindex="0"
           role="button"
           :aria-label="'Otwórz zdjęcie ' + (index + 1) + ' z galerii Anetki'"
-          loading="lazy"
-          alt="Zdjęcie z galerii Anetki"
-        />
+        >
+          <source :srcset="getImageSources(image.src).avif" type="image/avif" />
+          <source :srcset="getImageSources(image.src).webp" type="image/webp" />
+          <img
+            :src="getImageSources(image.src).jpg"
+            loading="lazy"
+            alt="Zdjęcie z galerii Anetki"
+          />
+        </picture>
       </div>
     </div>
   </div>
